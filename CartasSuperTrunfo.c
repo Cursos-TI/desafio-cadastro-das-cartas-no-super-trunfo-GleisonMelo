@@ -35,6 +35,7 @@
     void calcularValores(Carta *carta) {
         carta->densidade = carta->populacao / carta->area;
         carta->PPB = carta->PIB / carta->populacao;
+
     }
     void compararPPB(Carta carta1, Carta carta2) {
         printf("Comparação de cartas (Atributo: PIB per capita):\n");
@@ -49,6 +50,7 @@
             printf("Resultado: Empate!\n");
         }
     }
+    
     
     
     void compararPT(Carta carta1, Carta carta2) {
@@ -112,9 +114,9 @@ int main() {
     printf("Digite a quantidade de população da cidade: \n");//pedindo a população
     scanf("%d", &carta2.populacao);// salvando a população
     printf("Digite a area por KM²: \n"); //pedindo a area do local
-    scanf("%.2f", &carta2.area); // salvando a area
+    scanf("%f", &carta2.area); // salvando a area
     printf("Digite o PIB da cidade: \n"); //Pedindo o PIB   
-    scanf("%.2f", &carta2.PIB); //salvando o PIB
+    scanf("%f", &carta2.PIB); //salvando o PIB
     printf("Digite o numero de pontos turisticos da cidade: \n"); // pedindo a quantidade dos pontos
     scanf("%d", &carta2.NPT); // Salvando os pontos
 
@@ -128,8 +130,13 @@ int main() {
     mostrarCarta(carta2);
 
     compararPPB(carta1, carta2);
+    printf("\n \n");
+    
     compararPT(carta1, carta2);
+    printf("\n \n");
+ 
     compararDP(carta1, carta2);
+    printf("\n \n");
 
     return 0;
 }
